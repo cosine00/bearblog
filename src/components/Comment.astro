@@ -1,26 +1,54 @@
-<div id="tcomment"></div>
+---
+const TWIKOO_ENV_ID = 'https://twikoo.hux.ink'; // 确保这是你的 Twikoo 服务端地址
+---
 
-<script>
-  document.addEventListener('astro:page-load', () => {
-    function loadTwikoo() {
-      const commentsContainer = document.getElementById('tcomment');
-      if (commentsContainer) {
+<div class="mt-8">
+  <div id="tcomment"></div>
+</div>
+
+<script define:vars={{ envId: TWIKOO_ENV_ID }}>
+  console.log('Twikoo script starting...');
+
+  const loadTwikoo = () => {
+    twikoo.init({
+      envId: envId,
+      el: '#tcomment',
+    }).then(() => {
+      console.log('Twikoo initialized successfully');
+    }).catch(e => {
+      console.error('Failed to initialize Twikoo:', e);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOM loaded, initializing Twikoo...');
+      if (window.twikoo) {
+        loadTwikoo();
+      } else {
         const script = document.createElement('script');
         script.src = 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js';
-        script.async = true;
-        script.onload = () => {
-          const initScript = document.createElement('script');
-          initScript.innerHTML = `
-            twikoo.init({
-                envId: 'https://twikoo.hux.ink', // 这里需要替换成你的环境id
-                el: '#tcomment',
-            });
-        `;
-          document.body.appendChild(initScript);
-        };
-        document.body.appendChild(script);
+        script.onload = loadTwikoo;
+        script.onerror = () => console.error('Failed to load Twikoo script');
+        document.head.appendChild(script);
       }
+    });
+  } else {
+    if (window.twikoo) {
+      loadTwikoo();
+    } else {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js';
+      script.onload = loadTwikoo;
+      script.onerror = () => console.error('Failed to load Twikoo script');
+      document.head.appendChild(script);
     }
-    loadTwikoo();
-  });
-</script> 
+  }
+</script>
+
+<style>
+  #tcomment {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+</style> 
