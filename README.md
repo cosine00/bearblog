@@ -34,11 +34,13 @@ export const PandaConfig = {
     navbar: [
         // {title: 'Posts', url: '/'}, // auto generated
         {title: 'about', url: '/about/'},
+        {title: '花园', url: 'https://clip.hux.ink/'},
+        {title: '悦动', url: 'https://workout.hux.ink/'},
     ],
     footer:[
         {title: 'rss', url: '/rss/'},
-        {title: 'contact', url: 'https://github.com/yuhangch/astro-theme-panda/issues/new'},
-        {title: 'github', url: 'https://github.com/yuhangch/astro-theme-panda'},
+        {title: 'contact', url: 'huxin1216@qq.com'},
+        {title: 'telegram', url: 'https://t.me/luckyvici'},
     ]
 }
 ```
