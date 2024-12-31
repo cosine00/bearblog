@@ -1,7 +1,7 @@
 ---
 title: Hello,Hugo~
 author: 落落vici
-date: 2023-01-01 21:00:00
+pubDate: 2023-01-01
 tags:
   - 折腾
 slug: hello-hugo

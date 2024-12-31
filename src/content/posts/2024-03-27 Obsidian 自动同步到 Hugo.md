@@ -1,6 +1,6 @@
 ---
 title: Obsidian 自动同步到 Hugo
-date: 2024-03-27 17:17:04
+pubDate: 2024-03-27 17:17:04
 tags:
   - 折腾
 author: 落落vici
