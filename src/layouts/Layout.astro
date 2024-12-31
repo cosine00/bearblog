@@ -3,7 +3,6 @@ import '../styles/index.css'
 import Header from './Header.astro'
 import Navbar from './Navbar.astro'
 import Footer from './Footer.astro'
-import Comment from '~/components/Comment.astro'
 import { useLocale } from '@utils/locale'
 import {PandaConfig} from "../config.js";
 const { t, locale } = useLocale(Astro.url)
@@ -35,8 +34,7 @@ const fullTitle = `${title} - ${defaultTitle}`
     </head>
     <body class="max-width dark:bg-stone-700">
         <Header />
-        { navbar && <Navbar />}
-        <Comment />
+        { navbar && <Navbar />}    
         <main >
             <slot />
         </main>
