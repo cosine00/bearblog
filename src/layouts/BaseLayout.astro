@@ -8,19 +8,31 @@
   </head>
   <body>
     <slot />
-    <script>
-      // 处理所有外部链接
-      document.addEventListener('DOMContentLoaded', () => {
-        const links = document.links;
-        for (let i = 0; i < links.length; i++) {
-          const link = links[i];
-          // 检查是否为外部链接
-          if (link.hostname !== window.location.hostname) {
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
+    <script is:inline>
+      // 立即执行函数
+      (function() {
+        function handleExternalLinks() {
+          const links = document.getElementsByTagName('a');
+          for (let i = 0; i < links.length; i++) {
+            const link = links[i];
+            if (link.hostname !== window.location.hostname && link.hostname !== '') {
+              link.setAttribute('target', '_blank');
+              link.setAttribute('rel', 'noopener noreferrer');
+              console.log('Modified external link:', link.href); // 用于调试
+            }
           }
         }
-      });
+
+        // 首次执行
+        handleExternalLinks();
+
+        // 监听动态内容变化
+        const observer = new MutationObserver(handleExternalLinks);
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+      })();
     </script>
   </body>
 </html> 
