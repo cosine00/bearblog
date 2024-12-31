@@ -13,14 +13,14 @@ const TWIKOO_ENV_ID = 'https://twikoo.hux.ink'; // 确保这是你的 Twikoo 服
     twikoo.init({
       envId: envId,
       el: '#tcomment',
-      lang: 'zh-CN',
-      langMap: {
-        'zh-CN': {
-          noComment: '此时无声胜有声！'
-        }
-      }
+      lang: 'zh-CN'
     }).then(() => {
       console.log('Twikoo initialized successfully');
+      // 修改没有评论时的显示文字
+      const noCommentElement = document.querySelector('.tk-no-comment');
+      if (noCommentElement) {
+        noCommentElement.textContent = '此时无声胜有声！';
+      }
     }).catch(e => {
       console.error('Failed to initialize Twikoo:', e);
     });
