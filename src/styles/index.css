@@ -1,5 +1,5 @@
 body {
-    font-family: 'LXGW WenKai Screen', sans-serif;
+    font-family: 'Noto Serif SC', serif;
     overflow-y: scroll;
 }
 
@@ -176,6 +176,6 @@ a.animated.active:after {
 
 /* 你可以根据需要为其他元素设置字体 */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'LXGW WenKai Screen', sans-serif;
+    font-family: 'Noto Serif SC', serif;
 }
 
