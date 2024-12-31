@@ -78,11 +78,11 @@ const title = locale === 'en' && FrontMatter['title-en'] ? FrontMatter['title-en
         <div class="flex sm:flex-row flex-col rounded-lg bg-stone-100 dark:bg-stone-600 p-2 px-4">
             <div>
                 {
-                    FrontMatter.categories &&
-                    FrontMatter.categories.map((category) => (
+                    FrontMatter.tags &&
+                    FrontMatter.tags.map((tag) => (
                             <span class="ml-2">
-                                <a href={path('/categories/' + category)} class="text-sm mr-2 panda-link">
-                                    #{t('categories.' + category)}#
+                                <a href={path('/tags/' + tag)} class="text-sm mr-2 panda-link">
+                                    #{t('tags.' + tag)}#
                                 </a>
                             </span>
                     ))
