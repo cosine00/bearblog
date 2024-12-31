@@ -6,7 +6,9 @@ export const PandaConfig = {
     defaultLocale: 'zh',
     navbar: [
         // {title: 'Posts', url: '/'}, // auto generated
-        { title: 'about', url: '/about/' }
+        { title: '花园', url: 'https://clip.hux.ink/' }
+        { title: '悦动', url: 'https://workout.hux.ink/' }
+        { title: '关于', url: '/about/' }
     ],
     footer: [
         { title: 'rss', url: '/rss.xml/' },
