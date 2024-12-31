@@ -1,15 +1,13 @@
-## A privacy-first, no-nonsense, super-fast astro blogging theme
+> 一个人的命运啊，当然要靠自我奋斗，但是也要考虑到历史的进程。
+  
+### 关于我
 
-**No trackers, a few javascript, few stylesheets**. and your words.
+落落vici
 
-Looks great on any device
+90后，阿卡林省人，现居深圳。
 
-Tiny (~30kb), optimized, and awesome pages
+财务🐶一枚，CICPA。
 
-No trackers, ads, little scripts
-
-RSS feeds
-
-Publish something awesome with your panda hands 
+眼高手低，愤世嫉俗。无甚爱好，干啥都是三分钟热度，除了爱瞎折腾。
 
 
