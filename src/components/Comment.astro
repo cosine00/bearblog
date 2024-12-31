@@ -13,6 +13,12 @@ const TWIKOO_ENV_ID = 'https://twikoo.hux.ink'; // 确保这是你的 Twikoo 服
     twikoo.init({
       envId: envId,
       el: '#tcomment',
+      lang: 'zh-CN',
+      langMap: {
+        'zh-CN': {
+          noComment: '此时无声胜有声！'
+        }
+      }
     }).then(() => {
       console.log('Twikoo initialized successfully');
     }).catch(e => {
