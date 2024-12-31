@@ -1,0 +1,26 @@
+---
+// ... 其他导入和frontmatter ...
+---
+
+<html>
+  <head>
+    <!-- ... 现有的head内容 ... -->
+  </head>
+  <body>
+    <slot />
+    <script>
+      // 处理所有外部链接
+      document.addEventListener('DOMContentLoaded', () => {
+        const links = document.links;
+        for (let i = 0; i < links.length; i++) {
+          const link = links[i];
+          // 检查是否为外部链接
+          if (link.hostname !== window.location.hostname) {
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+          }
+        }
+      });
+    </script>
+  </body>
+</html> 
