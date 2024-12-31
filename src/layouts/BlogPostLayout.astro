@@ -3,6 +3,7 @@ import Layout from './Layout.astro'
 import {useLocale} from '@utils/locale'
 import {formatDateYMD} from "@utils/format";
 import {PostFrontMatter} from "../type";
+import Comment from '../components/Comment.astro';
 
 interface Props {
     FrontMatter: PostFrontMatter;
@@ -102,4 +103,7 @@ const title = locale === 'en' && FrontMatter['title-en'] ? FrontMatter['title-en
                     </div>
         )
     }
+
+    <!-- 添加评论组件 -->
+    <Comment />
 </Layout>
