@@ -1,9 +1,9 @@
 export const PandaConfig = {
-    title: 'Panda Blog',
+    title: 'Counting Stars💫',
     description: 'Panda Blog, a blog powered by Astro',
-    start: '2016',
-    site: 'https://astro-theme-panda.vercel.app/',
-    defaultLocale: 'en',
+    start: '2023',
+    site: 'https://bearblog-pi.vercel.app/',
+    defaultLocale: 'zh',
     navbar: [
         // {title: 'Posts', url: '/'}, // auto generated
         { title: 'about', url: '/about/' }
