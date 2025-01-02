@@ -21,13 +21,18 @@ function isRootPage() {
     >
     {
         items.map((item) => {
+            const isExternal = item.url.startsWith('http');
             return (
                     <a
-                            rel="prefetch"
+                            rel={isExternal ? "noopener noreferrer" : "prefetch"}
                             href={item.url}
+                            target={isExternal ? "_blank" : undefined}
                             class="panda-link mr-4 animated hover:no-underline"
                             class:list={url.toString().includes(item.url) ? 'active' : ''}
-                    >{item.title}</a>
+                    >
+                        {item.title}
+                        {isExternal && <span class="text-xs opacity-70">↗</span>}
+                    </a>
             )
         })
     }

@@ -1,5 +1,5 @@
 body {
-    font-family: 'Noto Serif SC', serif;
+    font-family: Verdana, serif;
     overflow-y: scroll;
 }
 
@@ -128,13 +128,24 @@ a.animated.active:after {
  * blockquote
  */
 .prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
-    @apply bg-gray-100 dark:bg-stone-600
-    text-base m-0
-    border-l-solid
-    font-normal rounded-lg
-    rounded-l-sm
-    pl-4 p-2;
-    border-left: 6px solid rgb(var(--color-primary-main)) !important;
+    @apply text-gray-600 dark:text-gray-300
+    text-base m-10 relative
+    font-normal font-italic
+    box-border
+    pl-[50px] p-0;
+    border-left: none !important;
+}
+
+/* 添加引号样式 */
+.prose :where(blockquote):not(:where(.not-prose, .not-prose *))::before {
+    content: '"';
+    @apply block absolute
+    text-[48px] font-bold
+    text-gray-700 dark:text-gray-400
+    leading-[30px]
+    -ml-[50px];
+    font-family: times, sans-serif;
+    font-style: normal;
 }
 
 .prose :where(ol > li):not(:where(.not-prose, .not-prose *))::marker,
@@ -174,8 +185,4 @@ a.animated.active:after {
     transition-duration: .3s;
 }
 
-/* 你可以根据需要为其他元素设置字体 */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Noto Serif SC', serif;
-}
 
