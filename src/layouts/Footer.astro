@@ -11,11 +11,16 @@ const {t, path} = useLocale(Astro.url)
         {footer &&
             footer.map((item, index) => (
                     <span>
-
-              <a href={item.url} class="panda-link">{item.title}</a>
+                        <a 
+                            href={item.url} 
+                            class="panda-link"
+                            target={item.target}
+                            rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
+                        >
+                            {item.title}
+                        </a>
                         {index !== footer.length - 1 && <span class="mx-1">|</span>}
                     </span>
-
             ))
         }
     </div>
@@ -24,9 +29,17 @@ const {t, path} = useLocale(Astro.url)
     </div>
     <div class="text-sm">
         {t('footer.built-with')}
-        <a class="panda-link italic" href="https://astro.build/">astro</a>, {t('footer.inspired-by')}<a
+        <a 
+            class="panda-link italic" 
+            href="https://astro.build/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+        >astro</a>, {t('footer.inspired-by')}
+        <a
             class="panda-link italic ml-1"
-            href="https://bearblog.dev/">bearblog</a
-    >.
+            href="https://bearblog.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >bearblog</a>
     </div>
 </footer>

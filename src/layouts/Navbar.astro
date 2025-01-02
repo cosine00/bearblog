@@ -31,7 +31,6 @@ function isRootPage() {
                             class:list={url.toString().includes(item.url) ? 'active' : ''}
                     >
                         {item.title}
-                        {isExternal && <span class="text-xs opacity-70">↗</span>}
                     </a>
             )
         })
